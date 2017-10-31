@@ -1,4 +1,4 @@
- ##Program to extract median values by zip and median values by date from lists campaign contributions by individual donors and distill into two output files.
+ #Program to extract median values by zip and median values by date from lists campaign contributions by individual donors and distill into two output files.
 
 
 **Description**
@@ -24,7 +24,8 @@ sample input file is present in ./input folder - Sample file itcont.txt
 ```
 Output files are emitted to ./output folder by the names medianvals_by_zip.txt and medianvals_by_date.txt
 ```
-** Compiling and running Program **
+
+**Compiling and running Program**
 
 ```
 javac ./src/*.java
