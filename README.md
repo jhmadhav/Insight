@@ -1,4 +1,4 @@
- #Program to extract median values by zip and median values by date from lists campaign contributions by individual donors and distill into two output files.
+ # Program to extract median values by zip and median values by date from lists campaign contributions by individual donors and distill into two output files.
 
 
 **Description**
