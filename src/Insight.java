@@ -98,12 +98,12 @@ private static void get_date(String[] line) throws ParseException {
 	{	TreeMap<Date,Val_sum> temp=tm.get(line[0]);
 		if(temp.containsKey(date))
 		{
-			temp.get(date).put_value(Integer.parseInt(line[14]));
+			temp.get(date).put_value(Long.parseLong(line[14]));
 		}
 		else
 		{
 			Val_sum z=new Val_sum();
-			z.put_value(Integer.parseInt(line[14]));
+			z.put_value(Long.parseLong(line[14]));
 			temp.put(date,z);
 			tm.put(line[0],temp);
 		}
@@ -111,7 +111,7 @@ private static void get_date(String[] line) throws ParseException {
 	else
 	{	TreeMap<Date,Val_sum> temp1=new TreeMap<>();
 		Val_sum z=new Val_sum();
-		z.put_value(Integer.parseInt(line[14]));
+		z.put_value(Long.parseLong(line[14]));
 		temp1.put(date, z);
 		tm.put(line[0],temp1);
 	}		
@@ -122,11 +122,11 @@ private static void fill_zip(String[] line,PrintWriter printWriter) {
 	String record=line[0]+","+line[10].substring(0,5);
 	if(hm.containsKey(record))
 	{
-		hm.get(record).put_value(Integer.parseInt(line[14]));
+		hm.get(record).put_value(Long.parseLong(line[14]));
 	}
 	else
 	{   Val_sum z=new Val_sum();
-		z.put_value(Integer.parseInt(line[14]));
+		z.put_value(Long.parseLong(line[14]));
 		hm.put(record, z);
 	}
 	Val_sum value=hm.get(record);
@@ -143,7 +143,7 @@ private static void fill_zip(String[] line,PrintWriter printWriter) {
 	printWriter.println(sb.toString());
 }
 //get median for the input list
-private static String get_median(ArrayList<Integer> ar) {
+private static String get_median(ArrayList<Long> ar) {
 	// TODO Auto-generated method stub
 	long median=0;
 	Collections.sort(ar);
@@ -158,23 +158,23 @@ private static String get_median(ArrayList<Integer> ar) {
 }
 // class definition to maintain running sum and 
 class Val_sum{
-	ArrayList<Integer> ar;
-	int sum;
+	ArrayList<Long> ar;
+	long sum;
 	public Val_sum()
 	{
 		ar=new ArrayList<>();
 		sum=0;
 	}
-	void put_value(int value)
+	void put_value(Long value)
 	{
 		ar.add(value);
 		sum+=value;
 	}
-	int get_sum()
+	long get_sum()
 	{
 		return this.sum;	
 	}
-	ArrayList<Integer> get_list()
+	ArrayList<Long> get_list()
 	{
 		return ar;
 	}	
